@@ -3,7 +3,6 @@ package org.geektimes.work.mvc.dispatcher;
 import org.apache.commons.lang.StringUtils;
 import org.geektimes.work.mvc.controller.Controller;
 import org.geektimes.work.mvc.controller.PageController;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
@@ -20,7 +19,6 @@ import java.util.*;
 
 public class FrontDispatcherServlet extends HttpServlet {
 
-
     /**
      * 请求路径和 Controller 的映射关系缓存
      */
@@ -31,7 +29,6 @@ public class FrontDispatcherServlet extends HttpServlet {
      */
     private Map<String, HandlerMethodInfo> handleMethodInfoMapping = new HashMap<>();
 
-
     /**
      * 初始化 Servlet
      *
@@ -41,7 +38,6 @@ public class FrontDispatcherServlet extends HttpServlet {
     public void init(ServletConfig servletConfig) throws ServletException {
         initHandleMethods();
     }
-
 
     /**
      * 读取所有的 RestController 的注解元信息 @Path
@@ -91,7 +87,6 @@ public class FrontDispatcherServlet extends HttpServlet {
         return supportedHttpMethods;
     }
 
-
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String requestUri = request.getRequestURI();
@@ -120,7 +115,6 @@ public class FrontDispatcherServlet extends HttpServlet {
                         }
                         RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher(viewPath);
                         requestDispatcher.forward(request, response);
-                        // return;
                     }
 
 

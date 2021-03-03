@@ -13,8 +13,10 @@
 <body>
     Hello MVC!
     <form action="<%=request.getContextPath()%>/register/doRegister" method="post">
-        <label for="username">Username: </label><input id="username" value="" name="username" /><br>
+        <label for="name">Username: </label><input id="name" value="" name="name" /><br>
         <label for="password">Password: </label><input id="password" value="" name="password" /><br>
+        <label for="email">Email: </label><input id="email" value="" name="email" /><br>
+        <label for="phoneNumber">PhoneNumber: </label><input id="phoneNumber" value="" name="phoneNumber" /><br>
         <input type="submit" value="Submit">
     </form>
 </body>

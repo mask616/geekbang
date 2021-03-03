@@ -27,10 +27,12 @@ public class RegisterController implements PageController{
         // TODO 执行注册逻辑
         try{
             RegisterService registerService = new RegisterService();
-            registerService.register(request, response);
-            return "/success.jsp";
+            if (registerService.register(request, response)){
+                return "/success.jsp";
+            }
         } catch (Exception e){
             throw new Throwable();
         }
+        return "/error.jsp";
     }
 }

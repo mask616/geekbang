@@ -1,5 +1,8 @@
 package org.geektimes.work.project.bean;
 
+import org.geektimes.work.orm.ID;
+import org.geektimes.work.orm.TableName;
+
 import java.util.Objects;
 
 /**
@@ -7,9 +10,11 @@ import java.util.Objects;
  *
  * @since 1.0
  */
+@TableName("users")
 public class User {
 
-    private Long id;
+    /*@ID
+    private Long id;*/
 
     private String name;
 
@@ -19,13 +24,13 @@ public class User {
 
     private String phoneNumber;
 
-    public Long getId() {
+    /*public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
+    }*/
 
     public String getName() {
         return name;
@@ -59,24 +64,27 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(name, user.name) && Objects.equals(password, user.password) && Objects.equals(email, user.email) && Objects.equals(phoneNumber, user.phoneNumber);
+        return Objects.equals(name, user.name) &&
+                Objects.equals(password, user.password) &&
+                Objects.equals(email, user.email) &&
+                Objects.equals(phoneNumber, user.phoneNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, password, email, phoneNumber);
+        return Objects.hash(name, password, email, phoneNumber);
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
