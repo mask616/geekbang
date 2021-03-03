@@ -1,6 +1,5 @@
 package org.geektimes.work.project.bean;
 
-import org.geektimes.work.orm.ID;
 import org.geektimes.work.orm.TableName;
 
 import java.util.Objects;
